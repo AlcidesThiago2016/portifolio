@@ -4,17 +4,21 @@ import Titulo from "../../components/Titulo";
 
 import { Descricao, BotaoTema, SidebarContainer } from "./styles";
 
+type Props = {
+  trocaTema: () => void;
+}
+
 /* eslint-disable jsx-a11y/alt-text */
-const Sidebar = () => (
+const Sidebar = (props: Props) => (
   <aside>
     <SidebarContainer>
       <Avatar />
       <Titulo fontSize={16}>Alcides Thiago</Titulo>
-      <Paragrafo tipo="secundario" fontSize={16}>
+      <Paragrafo fontSize={16}>
         AlcidesThiago2016
       </Paragrafo>
       <Descricao fontSize={12}>Desenvolvedor FullStack Java</Descricao>
-      <BotaoTema>Trocar Tema</BotaoTema>
+      <BotaoTema onClick={props.trocaTema}>Trocar Tema</BotaoTema>
     </SidebarContainer>
   </aside>
 );
